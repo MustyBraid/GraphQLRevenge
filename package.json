@@ -1,0 +1,17 @@
+{
+    "name": "gql-beatdown",
+    "version": "1.0.0",
+    "lockfileVersion": 2,
+    "requires": true,
+    "main": "server/server.js",
+    "scripts": {
+        "start": "nodemon server/server.js --ignore client",
+        "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+        "install": "cd server && npm i",
+        "seed": "cd server && npm run seed",
+        "build": "cd client && npm run build && cd .. && cp -r ./client/dist/* ./server/public && echo Done"
+    },
+    "dependencies": {
+        "concurrently": "^7.6.0"
+    }
+}

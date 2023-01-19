@@ -1,0 +1,21 @@
+Hello traveler! 
+Here are the most insightful breakthroughs that occurred during this project:
+
+1. ATLAS_URI=mongodb+srv://GrapherMan:1DL4f4WM082ylcWD@cluster0.dhjdx5r.mongodb.net/sample_restaurants?retryWrites=true&w=majority 
+Is the environment variable needed to make this work. Note the mongodb.net/COLLECTIONNAMEHERE aspect of this. I'm not sure how to dynamically
+swap between collections in Atlas, but if you're staying in the same cllection this is how to do it at a seemingly project-wide level.
+This has come up in bug fixing several times so it's worth writing down. Check that your connection string specifies the collection you want.
+
+2. Mongoose schemas are used in the RESOLVERS section of this Apollogql + mongoose stack. Mongoose schemas and gql typeDefs seem extremely
+redundant, but the schemas are needed if you're going to actually write/read/do anything with a MongoDB database. Queries and Mutations
+will always return null if there is not a valid resolver function that uses mongoose (they 'bounce off' so to speak. returns 200 but nothing
+actually happens), the default resolvers that Apollo creates do NOT work with mongoDB databases.
+
+
+
+Future:
+1. How do I dynamically update which IP addresses are allowed to communicate with mongoDB Atlas? In a production environment I can't hardcode
+these addresses and leaving the database completely open is obviously not realistic. I'm just not sure how to do this, and it will definitely
+come up eventually.
+
+2. Maybe write this in Markdown. lol
