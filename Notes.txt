@@ -1,7 +1,7 @@
 Hello traveler! 
 Here are the most insightful breakthroughs that occurred during this project:
 
-1. ATLAS_URI=mongodb+srv://GrapherMan:1DL4f4WM082ylcWD@cluster0.dhjdx5r.mongodb.net/sample_restaurants?retryWrites=true&w=majority 
+1. ATLAS_URI=STRINGHERE.mongodb.net/sample_restaurants?retryWrites=true&w=majority 
 Is the environment variable needed to make this work. Note the mongodb.net/COLLECTIONNAMEHERE aspect of this. I'm not sure how to dynamically
 swap between collections in Atlas, but if you're staying in the same cllection this is how to do it at a seemingly project-wide level.
 This has come up in bug fixing several times so it's worth writing down. Check that your connection string specifies the collection you want.
